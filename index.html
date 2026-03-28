@@ -1,0 +1,311 @@
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0f172a;
+            color: #fff;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: #020617;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav h1 {
+            color: #38bdf8;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .9)), url('me1.jpg') center/cover;
+            background-image: url(./images.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .hero h2 {
+            font-size: clamp(28px, 5vw, 50px);
+        }
+
+        .typing {
+            color: #94a3b8;
+            margin-top: 10px;
+        }
+
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #020617;
+            padding: 20px;
+            border-radius: 15px;
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .skills-bar {
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .bar {
+            background: #1e293b;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 8px;
+            margin-top: 5px;
+        }
+
+        .bar span {
+            display: block;
+            height: 100%;
+            background: #38bdf8;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: #38bdf8;
+            color: black;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+
+        /* Social Colors */
+        .whatsapp {
+            background: #25D366;
+            color: white
+        }
+
+        .instagram {
+            background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+            color: white
+        }
+
+        .facebook {
+            background: #1877f2;
+            color: white
+        }
+
+        .btn:hover {
+            transform: scale(1.1)
+        }
+
+        .projects .card p {
+            font-size: 13px;
+            margin: 10px 0
+        }
+
+        footer {
+            background: #020617;
+            padding: 15px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        @media(max-width:768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: #020617;
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                padding: 15px;
+                border-radius: 10px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h1>SHANZIL</h1>
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        <ul id="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div>
+            <h2 data-aos="fade-up">Hi, I'm Shanzil</h2>
+            <p class="typing" id="typing"></p>
+        </div>
+    </section>
+
+    <section class="section" id="about" data-aos="fade-up">
+        <h2>About Me</h2>
+        <p> My name is Shanzil,Alhumdulliallah i am Muslim, I am 18 years old and passionate about becoming a software
+            engineer. I love exploring new things, skydiving, and enjoying different foods.By the blessing of God i care
+            about those fake people too, who are in hope to make me lose and showing me their true side but reality i
+            know about that people.</p>
+    </section>
+
+    <section class="section" id="skills">
+        <h2 data-aos="fade-up">Skills</h2>
+        <div class="grid">
+            <div class="card" data-aos="zoom-in">HTML
+                <div class="skills-bar">
+                    <div class="bar"><span style="width:95%"></span></div>
+                </div>
+            </div>
+            <div class="card" data-aos="zoom-in">CSS
+                <div class="skills-bar">
+                    <div class="bar"><span style="width:95%"></span></div>
+                </div>
+            </div>
+            <div class="card" data-aos="zoom-in">JavaScript
+                <div class="skills-bar">
+                    <div class="bar"><span style="width:75%"></span></div>
+                </div>
+            </div>
+            <div class="card" data-aos="zoom-in">Ms Office
+                <div class="skills-bar">
+                    <div class="bar"><span style="width:98%"></span></div>
+                </div>
+            </div>
+            <div class="card" data-aos="zoom-in">video Editing
+                <div class="skills-bar">
+                    <div class="bar"><span style="width:80%"></span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="gallery">
+        <h2 data-aos="fade-up">Gallery</h2>
+        <div class="grid gallery">
+            <img src="./me.1.jpeg">
+            <img src="./WhatsApp Image 2026-03-28 at 10.29.42 PM.jpeg">
+            <img src="./me.3.jpeg">
+        </div>
+    </section>
+    <section class="section" id="contact" data-aos="fade-up">
+        <h2>Contact Me</h2>
+        <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap">
+            <a href="https://wa.me/923702797802" target="_blank" class="btn whatsapp"><i class="fab fa-whatsapp"></i>
+                WhatsApp</a>
+            <a href="https://www.instagram.com/shanikhan_nn/" target="_blank" class="btn instagram"><i
+                    class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.facebook.com/share/1GN9N6gbst/" target="_blank" class="btn facebook"><i
+                    class="fab fa-facebook"></i> Facebook</a>
+        </div>
+    </section>
+    <section class="section" id="message" data-aos="fade-up">
+        <h2>Send Me a Message</h2>
+        <form onsubmit="sendMessage(event)"
+            style="max-width:500px;margin:auto;display:flex;flex-direction:column;gap:15px;">
+            <input type="text" id="name" placeholder="Your Name" required
+                style="padding:10px;border-radius:8px;border:none;">
+            <input type="text" id="msg" placeholder="Your Message" required
+                style="padding:10px;border-radius:8px;border:none;">
+            <button type="submit" class="btn instagram"><i class="fab fa-instagram"></i> Send to Instagram</button>
+        </form>
+    </section>
+    <footer>
+        <p>© 2026 Shanzil | Portfolio</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        function toggleMenu() { document.getElementById('menu').classList.toggle('active'); }
+
+        const text = ["Future Software Engineer 💻", "Creative Thinker 🚀", "Fast Learner ⚡"];
+        let i = 0, j = 0, current = '', del = false;
+        function type() {
+            current = text[i];
+            document.getElementById('typing').innerHTML = current.substring(0, j);
+            if (!del && j < current.length) j++; else if (del && j > 0) j--; else { del = !del; if (!del) i = (i + 1) % text.length; }
+            setTimeout(type, del ? 50 : 100);
+            type();
+        }
+    </script>
+</body>
+</html>
